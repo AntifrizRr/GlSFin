@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamble Campaign Exchange</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0f14;
+    color:white;
+    font-family:Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+.header{
+    padding:30px 20px;
+    border-bottom:1px solid #1d2733;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo{
+    width:72px;
+    height:72px;
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(0,255,120,0.35);
+}
+
+.title{
+    font-size:34px;
+    font-weight:800;
+    color:#00ff73;
+}
+
+.subtitle{
+    color:#94a3b8;
+    margin-top:5px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.live-box{
+    background:linear-gradient(135deg,#00ff7340,#00ff7320);
+    border:1px solid #00ff7370;
+    border-radius:24px;
+    padding:25px;
+    margin-bottom:30px;
+    position:relative;
+    overflow:hidden;
+}
+
+.live-status{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:12px;
+}
+
+.dot{
+    width:14px;
+    height:14px;
+    background:#00ff73;
+    border-radius:50%;
+    box-shadow:0 0 15px #00ff73;
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    0%{opacity:0.4}
+    50%{opacity:1}
+    100%{opacity:0.4}
+}
+
+.live-title{
+    font-size:26px;
+    font-weight:700;
+}
+
+.live-text{
+    color:#d1d5db;
+    line-height:1.6;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#131a23;
+    border:1px solid #1f2937;
+    border-radius:22px;
+    padding:24px;
+    transition:0.25s;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#00ff73;
+    box-shadow:0 0 25px rgba(0,255,115,0.15);
+}
+
+.bet-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:12px;
+    line-height:1.4;
+}
+
+.desc{
+    color:#94a3b8;
+    line-height:1.5;
+    margin-bottom:20px;
+    min-height:48px;
+}
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.odds{
+    font-size:34px;
+    color:#00ff73;
+    font-weight:900;
+}
+
+button{
+    background:#00ff73;
+    color:#04130a;
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.stats{
+    margin-top:40px;
+    background:#111827;
+    border:1px solid #1f2937;
+    border-radius:24px;
+    padding:24px;
+}
+
+.stats-title{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.stat-line{
+    margin-bottom:14px;
+    color:#d1d5db;
+}
+
+.footer{
+    text-align:center;
+    color:#64748b;
+    padding:40px 20px 60px;
+    font-size:14px;
+}
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#00ff73;
+    color:#03120a;
+    padding:16px 24px;
+    border-radius:16px;
+    font-weight:800;
+    display:none;
+    z-index:999;
+    box-shadow:0 0 30px rgba(0,255,115,0.35);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo-wrap">
+        <img src="logo.png" class="logo">
+        <div>
+            <div class="title">Gamble Campaign Exchange</div>
+            <div class="subtitle">
+                Market powered by burnout, caffeine and broken pixels
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="live-box">
+<div class="live-status">
+<div class="dot"></div>
+<div class="live-title">LIVE CAMPAIGN STATUS</div>
+</div>
+
+<div class="live-text">
+Кампания всё ещё жива. Аналитики пока не плачут открыто.
+Facebook делает вид, что всё нормально.
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="bet-title">🚀 Кампания улетит в плюс</div>
+<div class="desc">ROI выше ожиданий, баеры счастливы.</div>
+<div class="bottom">
+<div class="odds">1.42</div>
+<button onclick="bet()">Поставить KPI</button>
+</div>
+</div>
+
+<div class="card">
+<div class="bet-title">🕯️ Умрёт на модерации</div>
+<div class="desc">“Ваш аккаунт ограничен в целях безопасности сообщества”.</div>
+<div class="bottom">
+<div class="odds">2.80</div>
+<button onclick="bet()">Слить бюджет</button>
+</div>
+</div>
+
+<div class="card">
+<div class="bet-title">🤡 Пиксель снова виноват</div>
+<div class="desc">Хотя никто не проверял его уже 3 месяца.</div>
+<div class="bottom">
+<div class="odds">3.25</div>
+<button onclick="bet()">Обвинить пиксель</button>
+</div>
+</div>
+
+<div class="card">
+<div class="bet-title">💀 ROI будет, но потом</div>
+<div class="desc">Очень потом. Возможно в следующем квартале.</div>
+<div class="bottom">
+<div class="odds">5.60</div>
+<button onclick="bet()">Верить дальше</button>
+</div>
+</div>
+
+</div>
+
+<div class="stats">
+<div class="stats-title">📊 Market analytics</div>
+<div class="stat-line">Active analysts: 17</div>
+<div class="stat-line">Emotional damage: 94%</div>
+<div class="stat-line">Remaining trust in Facebook: 3%</div>
+</div>
+
+</div>
+
+<div class="footer">
+This platform is absolutely not regulated by anyone.<br>
+All bets are accepted in nervous cells and broken expectations.
+</div>
+
+<div class="toast" id="toast">
+Ставка принята. Аналитик уже нервничает.
+</div>
+
+<script>
+function bet(){
+    const toast = document.getElementById("toast");
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        toast.style.display = "none";
+    }, 2200);
+}
+</script>
+
+</body>
+</html>
