@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gamble Campaign Exchange</title>
-
 <style>
 *{
     margin:0;
@@ -32,6 +31,8 @@ body{
     display:flex;
     align-items:center;
     gap:18px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .logo{
@@ -139,6 +140,7 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:16px;
 }
 
 .odds{
@@ -201,143 +203,102 @@ button:hover{
     z-index:999;
     box-shadow:0 0 30px rgba(0,255,115,0.35);
 }
+
+@media (max-width:600px){
+    .header{padding:20px 16px}
+    .logo{width:56px;height:56px}
+    .title{font-size:24px}
+    .subtitle{font-size:14px}
+    .container{padding:20px 14px}
+    .grid{grid-template-columns:1fr}
+    .live-title{font-size:20px}
+}
 </style>
 </head>
-
 <body>
-
 <div class="header">
     <div class="logo-wrap">
-        <img src="logo.png" class="logo">
+        <img src="logo.png" class="logo" alt="Gamble Campaign Exchange">
         <div>
             <div class="title">Gamble Campaign Exchange</div>
-            <div class="subtitle">
-                Market powered by burnout, caffeine and broken pixels
-            </div>
+            <div class="subtitle">Market powered by burnout, caffeine and broken pixels</div>
         </div>
     </div>
 </div>
 
 <div class="container">
-
-<div class="live-box">
-<div class="live-status">
-<div class="dot"></div>
-<div class="live-title">LIVE CAMPAIGN STATUS</div>
-</div>
-
-<div class="live-text">
-Кампания всё ещё жива. Аналитики пока не плачут открыто.
-Улыбаемся и машем.
-</div>
-</div>
-
-```html id="x0m7pw"
-<div class="grid">
-
-    <div class="card">
-        <div class="bet-title">
-            🌴 Нашли кнопку «БАБЛО» и уехали жить на сказочное Бали
+    <div class="live-box">
+        <div class="live-status">
+            <div class="dot"></div>
+            <div class="live-title">LIVE CAMPAIGN STATUS</div>
         </div>
-
-        <div class="desc">
-            ROI бесконечный, KPI закрываются сами,
-            а созвоны теперь только на фоне океана.
-        </div>
-
-        <div class="bottom">
-            <div class="odds">1.08</div>
-            <button onclick="bet()">
-                Купить билет
-            </button>
+        <div class="live-text">
+            Кампания всё ещё жива. Аналитики пока не плачут открыто.<br>
+            Улыбаемся и машем.
         </div>
     </div>
 
-    <div class="card">
-        <div class="bet-title">
-            🏃 Все разбегутся, останется только эффективный рук
+    <div class="grid">
+        <div class="card">
+            <div class="bet-title">🌴 Нашли кнопку «БАБЛО» и уехали жить на сказочное Бали</div>
+            <div class="desc">ROI бесконечный, KPI закрываются сами, а созвоны теперь только на фоне океана.</div>
+            <div class="bottom">
+                <div class="odds">1.08</div>
+                <button type="button" onclick="bet()">Купить билет</button>
+            </div>
         </div>
 
-        <div class="desc">
-            Последний онлайн команды был
-            “seen 3 days ago”.
+        <div class="card">
+            <div class="bet-title">🏃 Все разбегутся, останется только эффективный рук</div>
+            <div class="desc">Последний онлайн команды был “seen 3 days ago”.</div>
+            <div class="bottom">
+                <div class="odds">2.75</div>
+                <button type="button" onclick="bet()">Держаться до конца</button>
+            </div>
         </div>
 
-        <div class="bottom">
-            <div class="odds">2.75</div>
-            <button onclick="bet()">
-                Держаться до конца
-            </button>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="bet-title">
-            ☄️ На Землю упал метеорит
+        <div class="card">
+            <div class="bet-title">☄️ На Землю упал метеорит</div>
+            <div class="desc">Но отчёт всё равно нужно отправить до конца рабочего дня.</div>
+            <div class="bottom">
+                <div class="odds">6.66</div>
+                <button type="button" onclick="bet()">Ставить ва-банк</button>
+            </div>
         </div>
 
-        <div class="desc">
-            Но отчёт всё равно нужно отправить
-            до конца рабочего дня.
-        </div>
-
-        <div class="bottom">
-            <div class="odds">6.66</div>
-            <button onclick="bet()">
-                Ставить ва-банк
-            </button>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="bet-title">
-            🌌 Всё схлопнется Большим взрывом и образуется новая АЛЬФАвселенная
-        </div>
-
-        <div class="desc">
-            Где все кампании запускаются.
-        </div>
-
-        <div class="bottom">
-            <div class="odds">9.99</div>
-            <button onclick="bet()">
-                Верить в АЛЬФУ
-            </button>
+        <div class="card">
+            <div class="bet-title">🌌 Всё схлопнется Большим взрывом и образуется новая АЛЬФАвселенная</div>
+            <div class="desc">Где все кампании запускаются.</div>
+            <div class="bottom">
+                <div class="odds">9.99</div>
+                <button type="button" onclick="bet()">Верить в АЛЬФУ</button>
+            </div>
         </div>
     </div>
 
-</div>
-```
-
-
-<div class="stats">
-<div class="stats-title">📊 Market analytics</div>
-<div class="stat-line">Active analysts: 17</div>
-<div class="stat-line">Emotional damage: 94%</div>
-<div class="stat-line">Remaining trust : 3%</div>
-</div>
-
+    <div class="stats">
+        <div class="stats-title">📊 Market analytics</div>
+        <div class="stat-line">Active analysts: 17</div>
+        <div class="stat-line">Emotional damage: 94%</div>
+        <div class="stat-line">Remaining trust: 3%</div>
+    </div>
 </div>
 
 <div class="footer">
-This platform is absolutely not regulated by anyone.<br>
-All bets are accepted in nervous cells and broken expectations.
+    This platform is absolutely not regulated by anyone.<br>
+    All bets are accepted in nervous cells and broken expectations.
 </div>
 
-<div class="toast" id="toast">
-Ставка принята. Аналитик уже нервничает.
-</div>
+<div class="toast" id="toast">Ставка принята. Аналитик уже нервничает.</div>
 
 <script>
 function bet(){
     const toast = document.getElementById("toast");
     toast.style.display = "block";
-
     setTimeout(() => {
         toast.style.display = "none";
     }, 2200);
 }
 </script>
-
 </body>
 </html>
