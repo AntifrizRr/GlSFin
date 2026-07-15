@@ -1,8 +1,0 @@
-# Keep the public UI demo free of campaign-identifying image assets
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.gif
-*.svg
-*.ico
